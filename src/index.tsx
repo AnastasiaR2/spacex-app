@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 
 import { AppRoute } from '~/libs/enums/enums.ts';
 
+import { App } from './app.tsx';
 import { RouterProvider } from './components/components.ts';
-import { App } from './pages/pages.ts';
 
 createRoot(document.querySelector('#root') as HTMLElement).render(
   <StrictMode>
