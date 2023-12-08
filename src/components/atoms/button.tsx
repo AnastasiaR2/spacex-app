@@ -14,6 +14,13 @@ const Button = styled.button<Properties>`
   background-color: #d3eaff;
   cursor: pointer;
   border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+
+  &:active {
+    transform: translateY(10px);
+  }
 `;
 
 export { Button };

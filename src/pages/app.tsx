@@ -1,4 +1,4 @@
-import { Button } from '~/components/components.ts';
+import { Button, HeartIcon } from '~/components/components.ts';
 import GlobalStyle from '~/global-style.ts';
 
 function App() {
@@ -6,6 +6,9 @@ function App() {
     <>
       <GlobalStyle />
       <Button>Sign in</Button>
+      <Button>
+        <HeartIcon />
+      </Button>
     </>
   );
 }
