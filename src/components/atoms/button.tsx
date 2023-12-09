@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+type Props = {
+  as?: React.ReactNode;
+};
+
+const Button = styled.button<Props>`
   width: 164px;
   height: 53px;
   padding: 12px 0px;

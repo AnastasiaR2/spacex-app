@@ -9,12 +9,7 @@ const StyledNavbar = styled.nav`
   align-items: center;
 `;
 
-type Properties = {
-  exact?: boolean;
-  disabled?: boolean;
-};
-
-const NavbarLink = styled(Link)<Properties>`
+const NavbarLink = styled(Link)`
   color: var(--white);
   font-family: Lato;
   font-size: 16px;
@@ -44,23 +39,23 @@ const NavbarLink = styled(Link)<Properties>`
   }
 `;
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const handleNavLinkClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
   };
 
   return (
     <StyledNavbar>
-      <NavbarLink exact to={AppRoute.ROOT}>
+      <NavbarLink exact="true" to={AppRoute.ROOT}>
         Home
       </NavbarLink>
-      <NavbarLink exact to={AppRoute.TOURS} onClick={handleNavLinkClick}>
+      <NavbarLink exact="true" to={AppRoute.TOURS} onClick={handleNavLinkClick}>
         Tours
       </NavbarLink>
-      <NavbarLink exact to={AppRoute.ABOUT} onClick={handleNavLinkClick}>
+      <NavbarLink exact="true" to={AppRoute.ABOUT} onClick={handleNavLinkClick}>
         About
       </NavbarLink>
-      <NavbarLink exact to={AppRoute.HELP} onClick={handleNavLinkClick}>
+      <NavbarLink exact="true" to={AppRoute.HELP} onClick={handleNavLinkClick}>
         Help
       </NavbarLink>
     </StyledNavbar>

@@ -4,11 +4,11 @@ import {
   RouterProvider as LibraryRouterProvider,
 } from 'react-router-dom';
 
-type Properties = {
+type Props = {
   routes: RouteObject[];
 };
 
-const RouterProvider: React.FC<Properties> = ({ routes }) => (
+const RouterProvider: React.FC<Props> = ({ routes }) => (
   <LibraryRouterProvider router={createBrowserRouter(routes)} />
 );
 
