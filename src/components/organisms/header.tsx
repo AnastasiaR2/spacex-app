@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 
 import { Button, HeartIcon, IconButton } from '~/components/atoms/atoms.ts';
+import { Navbar } from '~/components/molecules/molecules.ts';
 
-type Properties = {
-  isFavorite?: boolean;
-};
-
-const StyledHeader = styled.header<Properties>`
+const StyledHeader = styled.header`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 19px 80px;
   background-color: var(--dark-gray-48);
 `;
 
-const Header: React.FC<Properties> = ({ isFavorite }) => {
+const Header = () => {
   return (
-    <StyledHeader isFavorite={isFavorite}>
+    <StyledHeader>
+      <Navbar />
       <IconButton>
         <HeartIcon />
       </IconButton>

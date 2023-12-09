@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-type Properties = {};
-
-const Button = styled.button<Properties>`
+const Button = styled.button`
   width: 164px;
   height: 53px;
   padding: 12px 0px;
@@ -16,7 +14,7 @@ const Button = styled.button<Properties>`
   border: none;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 
   &:active {
     transform: translateY(10px);
