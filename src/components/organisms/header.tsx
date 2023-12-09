@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Button, HeartIcon, IconButton } from '~/components/atoms/atoms.ts';
-import { Navbar } from '~/components/molecules/molecules.ts';
+import { Logo, Navbar } from '~/components/molecules/molecules.ts';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
 const Header = () => {
   return (
     <StyledHeader>
+      <Logo />
       <Navbar />
       <IconButton>
         <HeartIcon />
