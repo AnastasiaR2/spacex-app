@@ -1,24 +1,25 @@
 import styled from 'styled-components';
 
-import { Button, HeartIcon } from '~/components/components.ts';
+import { Button, HeartIcon, IconButton } from '~/components/atoms/atoms.ts';
 
 type Properties = {
   isFavorite?: boolean;
 };
 
 const StyledHeader = styled.header<Properties>`
-  background-color: rgba(30, 30, 30, 0.48);
   display: flex;
   justify-content: flex-end;
+  padding: 19px 80px;
+  background-color: var(--dark-gray-48);
 `;
 
 const Header: React.FC<Properties> = ({ isFavorite }) => {
   return (
     <StyledHeader isFavorite={isFavorite}>
-      <Button>Sign in</Button>
-      <Button>
+      <IconButton>
         <HeartIcon />
-      </Button>
+      </IconButton>
+      <Button>Sign in</Button>
     </StyledHeader>
   );
 };

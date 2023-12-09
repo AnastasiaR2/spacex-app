@@ -12,6 +12,18 @@ import SyneSemiBoldWoff from '~/fonts/syne-semi-bold.woff';
 import SyneSemiBoldWoff2 from '~/fonts/syne-semi-bold.woff2';
 
 const GlobalStyle = createGlobalStyle`
+
+  :root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --black-25: rgba(0, 0, 0, 25%);
+    --light-gray: #ECECEC;
+    --dark-gray: #1E1E1E;
+    --dark-gray-48: rgba(30, 30, 30, 48%);
+    --blue: #D3EAFF;
+    --dark-blue: #556B84;
+  }
+
   *,
   *::before,
   *::after {
