@@ -1,5 +1,7 @@
+import { HomeBanner } from '~/components/organisms/organisms.ts';
+
 const Home = () => {
-  return <></>;
+  return <HomeBanner></HomeBanner>;
 };
 
 export { Home };
