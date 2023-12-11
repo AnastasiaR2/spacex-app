@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 type Props = {
-  backgroundImage: string;
+  $backgroundImage: string;
   height: string;
 };
 
 const BackgroundContainer = styled.div<Props>`
   width: 100%;
   height: ${({ height }) => height};
-  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
+  background-image: ${({ $backgroundImage }) => `url(${$backgroundImage})`};
   background-color: var(--blue);
   background-size: cover;
   position: absolute;

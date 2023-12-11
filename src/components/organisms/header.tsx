@@ -12,7 +12,7 @@ import { AppRoute } from '~/libs/enums/enums.ts';
 import { useLocation } from '~/libs/hooks/hooks.ts';
 
 type FavoritesButtonProps = {
-  isFavorites?: boolean;
+  $isFavorites?: boolean;
 };
 
 const StyledHeader = styled.header`
@@ -31,8 +31,8 @@ const SignInButton = styled(Button)`
 `;
 
 const FavoritesButton = styled(IconButton)<FavoritesButtonProps>`
-  background-color: ${({ isFavorites }) =>
-    isFavorites ? 'var(--pink)' : 'var(--light-gray)'};
+  background-color: ${({ $isFavorites }) =>
+    $isFavorites ? 'var(--pink)' : 'var(--light-gray)'};
 `;
 
 const Header = () => {
@@ -46,11 +46,11 @@ const Header = () => {
       <Navbar />
       <FlexWrapper gap="12">
         <FavoritesButton
-          isFavorites={isFavorites}
+          $isFavorites={isFavorites}
           as={Link}
           to={AppRoute.FAVORITES}
         >
-          <HeartIcon isFavorites={isFavorites} />
+          <HeartIcon $isFavorites={isFavorites} />
         </FavoritesButton>
         <SignInButton>Sign in</SignInButton>
       </FlexWrapper>

@@ -12,7 +12,7 @@ const FavoritesTitle = styled(Title)`
 const FavoritesBanner = () => {
   return (
     <>
-      <BackgroundContainer backgroundImage={Background3} height="440px" />
+      <BackgroundContainer $backgroundImage={Background3} height="440px" />
       <FavoritesTitle color="--white">Favourites</FavoritesTitle>
     </>
   );
