@@ -1,4 +1,4 @@
-import { Header } from '~/components/components.ts';
+import { Header, Layout } from '~/components/components.ts';
 import GlobalStyle from '~/global-style.ts';
 
 const App = () => {
@@ -6,6 +6,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <Header />
+      <Layout></Layout>
     </>
   );
 };
