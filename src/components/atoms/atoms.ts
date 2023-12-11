@@ -1,3 +1,4 @@
+export { BackgroundContainer } from './background-container.tsx';
 export { Button } from './button.tsx';
 export { FlexWrapper } from './flex-wrapper.tsx';
 export { HeartIcon } from './heart-icon.tsx';

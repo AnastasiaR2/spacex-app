@@ -63,8 +63,8 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: swap;
     src:
-      url(${SyneBoldWoff2}) format("woff2"),
-      url(${SyneBoldWoff}) format("woff");
+      url(${SyneSemiBoldWoff2}) format("woff2"),
+      url(${SyneSemiBoldWoff}) format("woff");
   }
 
   @font-face {
@@ -73,8 +73,8 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: swap;
     src:
-      url(${SyneExtraBoldWoff2}) format("woff2"),
-      url(${SyneExtraBoldWoff}) format("woff");
+      url(${SyneBoldWoff2}) format("woff2"),
+      url(${SyneBoldWoff}) format("woff");
   }
 
   @font-face {
@@ -83,8 +83,8 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: swap;
     src:
-      url(${SyneSemiBoldWoff2}) format("woff2"),
-      url(${SyneSemiBoldWoff}) format("woff");
+      url(${SyneExtraBoldWoff2}) format("woff2"),
+      url(${SyneExtraBoldWoff}) format("woff");
   }
 }
 `;
