@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
 import Background1 from '~/assets/images/background-1.jpg';
-import {
-  BackgroundContainer,
-  Dot,
-  FlexWrapper,
-  Title,
-} from '~/components/atoms/atoms.ts';
+import { BackgroundContainer, Title } from '~/components/atoms/atoms.ts';
+import { DotControls } from '~/components/molecules/molecules.ts';
 
 const HomeTitle = styled(Title)`
   font-weight: 800;
@@ -18,6 +14,12 @@ const HomeTitle = styled(Title)`
   }
 `;
 
+const DotControlsWrapper = styled.div`
+  /* position: absolute;
+  top: 480px;
+  left: 785px; */
+`;
+
 const HomeBanner = () => {
   return (
     <>
@@ -25,10 +27,9 @@ const HomeBanner = () => {
       <HomeTitle color="--white" as="h1">
         The space is waiting for <span>You</span>
       </HomeTitle>
-      <FlexWrapper gap="8">
-        <Dot selected={true} color="--white" />
-        <Dot selected={false} color="--white" />
-      </FlexWrapper>
+      <DotControlsWrapper>
+        <DotControls />
+      </DotControlsWrapper>
     </>
   );
 };

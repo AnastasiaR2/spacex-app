@@ -14,6 +14,7 @@ const Dot = styled.div.attrs<Props>(({ color = '--dark-gray' }) => ({
   background-color: transparent;
   border: 1px solid ${({ color }) => `${color}`};
   position: relative;
+  cursor: pointer;
 
   &::after {
     display: ${({ selected }) => (selected ? 'block' : 'none')};
