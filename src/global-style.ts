@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     --dark-gray-48: rgba(30, 30, 30, 48%);
     --blue: #D3EAFF;
     --dark-blue: #556B84;
+    --pink: #DD377D;
   }
 
   *,

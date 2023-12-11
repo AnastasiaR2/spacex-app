@@ -19,10 +19,6 @@ const Button = styled.button<Props>`
   position: relative;
   overflow: hidden;
   transition: transform 0.4s ease-in-out;
-
-  &:active {
-    transform: translateY(10px);
-  }
 `;
 
 export { Button };

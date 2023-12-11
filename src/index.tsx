@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
+import { RouterProvider } from '~/components/components.ts';
 import { AppRoute } from '~/libs/enums/enums.ts';
+import { Favorites, Home } from '~/pages/pages.ts';
 
 import { App } from './app.tsx';
-import { RouterProvider } from './components/components.ts';
 
 createRoot(document.querySelector('#root') as HTMLElement).render(
   <StrictMode>
@@ -13,6 +14,16 @@ createRoot(document.querySelector('#root') as HTMLElement).render(
         {
           path: AppRoute.ROOT,
           element: <App />,
+          children: [
+            {
+              path: AppRoute.ROOT,
+              element: <Home />,
+            },
+            {
+              path: AppRoute.FAVORITES,
+              element: <Favorites />,
+            },
+          ],
         },
       ]}
     />
