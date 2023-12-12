@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-import Background1 from '~/assets/images/background-1.jpg';
-import { BackgroundContainer, Title } from '~/components/atoms/atoms.ts';
-import { DotControls } from '~/components/molecules/molecules.ts';
+import { Title } from '~/components/atoms/atoms.ts';
+import {
+  BackgroundSlides,
+  DotControls,
+} from '~/components/molecules/molecules.ts';
 
 const HomeTitle = styled(Title)`
   font-weight: 800;
@@ -23,7 +25,7 @@ const DotControlsWrapper = styled.div`
 const HomeBanner = () => {
   return (
     <>
-      <BackgroundContainer $backgroundImage={Background1} height="740px" />
+      <BackgroundSlides />
       <HomeTitle color="--white" as="h1">
         The space is waiting for <span>You</span>
       </HomeTitle>

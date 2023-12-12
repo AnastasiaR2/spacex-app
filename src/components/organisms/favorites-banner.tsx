@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Background3 from '~/assets/images/background-3.jpg';
 import { BackgroundContainer, Title } from '~/components/atoms/atoms.ts';
+import { IMAGES_URLS } from '~/libs/constants/constants.ts';
 
 const FavoritesTitle = styled(Title)`
   font-weight: 800;
@@ -12,7 +12,7 @@ const FavoritesTitle = styled(Title)`
 const FavoritesBanner = () => {
   return (
     <>
-      <BackgroundContainer $backgroundImage={Background3} height="440px" />
+      <BackgroundContainer $backgroundImage={IMAGES_URLS[2]} height="440px" />
       <FavoritesTitle color="--white">Favourites</FavoritesTitle>
     </>
   );
