@@ -8,6 +8,7 @@ const IconButton = styled(Button)`
   justify-content: center;
   width: 53px;
   height: 53px;
+  background-color: var(--light-gray);
 `;
 
 export { IconButton };
