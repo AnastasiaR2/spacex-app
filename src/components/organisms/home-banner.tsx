@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 import { Title } from '~/components/atoms/atoms.ts';
-import {
-  BackgroundSlides,
-  DotControls,
-} from '~/components/molecules/molecules.ts';
+import { BackgroundSlider } from '~/components/molecules/molecules.ts';
 
 const HomeTitle = styled(Title)`
   font-weight: 800;
@@ -16,22 +13,13 @@ const HomeTitle = styled(Title)`
   }
 `;
 
-const DotControlsWrapper = styled.div`
-  /* position: absolute;
-  top: 480px;
-  left: 785px; */
-`;
-
-const HomeBanner = () => {
+const HomeBanner: React.FC = () => {
   return (
     <>
-      <BackgroundSlides />
       <HomeTitle color="--white" as="h1">
         The space is waiting for <span>You</span>
       </HomeTitle>
-      <DotControlsWrapper>
-        <DotControls />
-      </DotControlsWrapper>
+      <BackgroundSlider></BackgroundSlider>
     </>
   );
 };
