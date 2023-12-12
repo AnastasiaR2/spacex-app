@@ -1,3 +1,4 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -7,8 +8,13 @@ import { Favorites, Home } from '~/pages/pages.ts';
 
 import { App } from './app.tsx';
 
+const client = new ApolloClient({
+  uri: 'https://spacex-production.up.railway.app/',
+  cache: new InMemoryCache(),
+});
+
 createRoot(document.querySelector('#root') as HTMLElement).render(
-  <StrictMode>
+  <ApolloProvider client={client}>
     <RouterProvider
       routes={[
         {
@@ -27,5 +33,5 @@ createRoot(document.querySelector('#root') as HTMLElement).render(
         },
       ]}
     />
-  </StrictMode>,
+  </ApolloProvider>,
 );

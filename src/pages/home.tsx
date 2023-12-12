@@ -1,7 +1,12 @@
-import { HomeBanner } from '~/components/organisms/organisms.ts';
+import { HomeBanner, MainSlider } from '~/components/organisms/organisms.ts';
 
 const Home = () => {
-  return <HomeBanner></HomeBanner>;
+  return (
+    <>
+      <MainSlider />
+      <HomeBanner />;
+    </>
+  );
 };
 
 export { Home };
