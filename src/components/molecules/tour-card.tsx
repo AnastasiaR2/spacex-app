@@ -37,16 +37,16 @@ const TourCardButton = styled(Button)`
 `;
 
 const TourCardBody = styled(FlexWrapper)`
-  padding: 32px 32px 24px;
   flex-direction: column;
+  padding: 32px 32px 24px;
 `;
 
 const TourCardText = styled(Text)`
   display: -webkit-box;
   max-height: 106px;
   overflow: hidden;
-  text-overflow: ellipsis;
   text-align: center;
+  text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 `;

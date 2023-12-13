@@ -4,8 +4,8 @@ import { BackgroundContainer, Title } from '~/components/atoms/atoms.ts';
 import { BACKGROUND_IMAGES } from '~/libs/constants/constants.ts';
 
 const FavoritesTitle = styled(Title)`
-  font-weight: 800;
   font-size: 48px;
+  font-weight: 800;
 `;
 
 const FavoritesBanner = () => {

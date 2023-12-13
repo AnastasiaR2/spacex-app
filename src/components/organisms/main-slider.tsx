@@ -24,8 +24,8 @@ const MainSliderTitle = styled(Title)`
 
 const SlidesWrapper = styled.div`
   display: flex;
+  margin: 40px 0;
   overflow: hidden;
-  margin: 40px 0px;
 `;
 
 const MainSlider: React.FC = () => {

@@ -17,9 +17,9 @@ type FavoritesButtonProps = {
 
 const StyledHeader = styled.header`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 35px;
+  align-items: center;
+  justify-content: space-between;
   padding: 19px 80px;
   background-color: var(--dark-gray-48);
 `;

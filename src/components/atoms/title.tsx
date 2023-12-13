@@ -5,10 +5,10 @@ type Props = {
 };
 
 const Title = styled.h2<Props>`
+  font-family: Syne, sans-serif;
   color: ${({ color = 'var(--dark-gray)' }) => `var(${color})`};
-  font-family: Syne;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 `;
 
 export { Title };

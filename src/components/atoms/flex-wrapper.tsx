@@ -7,8 +7,8 @@ type Props = {
 const FlexWrapper = styled.div.attrs<Props>(({ gap }) => ({
   gap: gap + 'px',
 }))`
-  gap: ${({ gap }) => gap};
   display: flex;
+  gap: ${({ gap }) => gap};
 `;
 
 export { FlexWrapper };

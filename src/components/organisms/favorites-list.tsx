@@ -17,10 +17,10 @@ const FavoriteListWrapper = styled(FlexWrapper)`
 `;
 
 const ClearAllButton = styled(Button)`
-  background-color: transparent;
-  text-transform: none;
-  text-align: right;
   align-self: flex-end;
+  text-align: right;
+  text-transform: none;
+  background-color: transparent;
 `;
 
 const FavoritesList: React.FC = () => {

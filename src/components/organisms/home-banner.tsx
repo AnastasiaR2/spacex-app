@@ -5,14 +5,14 @@ import { Button, FlexWrapper, Text, Title } from '~/components/atoms/atoms.ts';
 import { BackgroundSlider } from '~/components/molecules/molecules.ts';
 
 const StyledHomeBanner = styled(FlexWrapper)`
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 `;
 
 const HomeTitle = styled(Title)`
-  font-weight: 800;
-  font-size: 48px;
   width: fit-content;
+  font-size: 48px;
+  font-weight: 800;
 
   & span {
     font-size: 310px;
@@ -20,12 +20,12 @@ const HomeTitle = styled(Title)`
 `;
 
 const ExploreToursButton = styled(Button)`
-  background-color: transparent;
-  text-transform: none;
+  width: 240px;
   font-size: 32px;
   color: var(--white);
-  text-shadow: 0px 4px 4px var(--black-25);
-  width: 240px;
+  text-shadow: 0 4px 4px var(--black-25);
+  text-transform: none;
+  background-color: transparent;
   transform: translateY(-50px);
 
   & svg {
@@ -34,9 +34,8 @@ const ExploreToursButton = styled(Button)`
 `;
 
 const HomeBanner: React.FC = () => {
-  const toursSection = document.querySelector('#toursSection');
-
   const ScrollToToursSection = () => {
+    const toursSection = document.querySelector('#toursSection');
     if (toursSection) {
       toursSection.scrollIntoView({ behavior: 'smooth' });
     }

@@ -6,12 +6,12 @@ type Props = {
 
 const Slide = styled.div<Props>`
   display: flex;
-  justify-items: flex-start;
+  flex: 0 0 100%;
   gap: 24px;
+  justify-items: flex-start;
+  transition: transform 0.3s ease-in-out;
   transform: ${({ $currentSlideIndex }) =>
     `translateX(-${$currentSlideIndex * 100}%)`};
-  flex: 0 0 100%;
-  transition: transform 0.3s ease-in-out;
 `;
 
 export { Slide };

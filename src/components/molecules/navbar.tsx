@@ -10,28 +10,31 @@ const StyledNavbar = styled.nav`
 `;
 
 const NavbarLink = styled(Link)`
-  color: var(--white);
-  font-family: Lato;
+  position: relative;
+  font-family: Lato, sans-serif;
   font-size: 16px;
   font-weight: 500;
+  color: var(--white);
   text-transform: uppercase;
   transition: 0.2s;
-  position: relative;
+
   &::before {
-    content: '';
-    height: 1px;
-    width: 0;
-    left: 0;
-    bottom: -4px;
     position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    content: '';
     background-color: var(--white);
     transition: 0.4s;
   }
+
   &.active {
     &::before {
       width: 100%;
     }
   }
+
   &:hover:not(.active) {
     &::before {
       width: 100%;

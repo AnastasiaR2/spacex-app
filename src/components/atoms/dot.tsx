@@ -8,24 +8,24 @@ type Props = {
 const Dot = styled.div.attrs<Props>(({ color = '--dark-gray' }) => ({
   color: `var(${color})`,
 }))`
+  position: relative;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid ${({ color }) => `${color}`};
-  position: relative;
-  cursor: pointer;
+  border-radius: 50%;
 
   &::after {
-    display: ${({ selected }) => (selected ? 'block' : 'none')};
-    content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
     top: 5px;
     left: 5px;
-    border-radius: 50%;
+    display: ${({ selected }) => (selected ? 'block' : 'none')};
+    width: 12px;
+    height: 12px;
+    content: '';
     background-color: ${({ color }) => `${color}`};
+    border-radius: 50%;
   }
 `;
 

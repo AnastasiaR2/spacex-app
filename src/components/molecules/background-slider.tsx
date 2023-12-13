@@ -15,7 +15,7 @@ const BackgroundSlider: React.FC = () => {
 
   const { currentSlideIndex, goToSlide, changeSlide } = useSlider({
     slidesCount,
-    autoPlay: false,
+    autoPlay: true,
   });
 
   const renderedSlides = BACKGROUND_IMAGES.map((_, index) => (
