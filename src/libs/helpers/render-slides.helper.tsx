@@ -9,15 +9,15 @@ const renderSlides = (
   const sliderItems = [];
   for (let i = 0; i < arr.length; i += 3) {
     const slideKey = `slide-${i / 3 + 1}`;
-    const divContent = arr
+    const slideContent = arr
       .slice(i, i + 3)
       .map((item: Rocket, index: number) => (
-        <TourCard key={`card-${i + index}`} index={i + index} rocket={item} />
+        <TourCard key={item.id} index={i + index} rocket={item} />
       ));
 
     sliderItems.push(
       <Slide $currentSlideIndex={currentSlideIndex} key={slideKey}>
-        {divContent}
+        {slideContent}
       </Slide>,
     );
   }

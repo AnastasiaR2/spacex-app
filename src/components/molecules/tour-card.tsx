@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import TrashBin from '~/assets/images/icons/trash-bin.svg?react';
+import TrashBinIcon from '~/assets/images/icons/trash-bin.svg?react';
 import {
   Button,
   FlexWrapper,
@@ -58,7 +58,11 @@ const TourCard: React.FC<Props> = ({ rocket, index }) => {
   const [favoritesList, setFavoritesList] = useRecoilState(favoritesListState);
 
   const handleAddToFavorites = () => {
-    setFavoritesList([...favoritesList, { id, name, description }]);
+    setFavoritesList([...favoritesList, { id, name, description, index }]);
+  };
+
+  const handleDeleteFromFavorites = () => {
+    setFavoritesList(favoritesList.filter((item) => item.id !== id));
   };
 
   const imageIndex = index % TOUR_IMAGES.length;
@@ -71,13 +75,15 @@ const TourCard: React.FC<Props> = ({ rocket, index }) => {
         <TourCardText>{description}</TourCardText>
         <FlexWrapper gap="16">
           <TourCardButton>Buy</TourCardButton>
-          <IconButton>
-            {isFavorites ? (
-              <TrashBin />
-            ) : (
-              <HeartIcon onClick={handleAddToFavorites} />
-            )}
-          </IconButton>
+          {isFavorites ? (
+            <IconButton onClick={handleDeleteFromFavorites}>
+              <TrashBinIcon />
+            </IconButton>
+          ) : (
+            <IconButton onClick={handleAddToFavorites}>
+              <HeartIcon />
+            </IconButton>
+          )}
         </FlexWrapper>
       </TourCardBody>
     </StyledTourCard>
