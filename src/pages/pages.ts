@@ -1,1 +1,2 @@
-export { App } from './app.tsx';
+export { Favorites } from './favorites.tsx';
+export { Home } from './home.tsx';
