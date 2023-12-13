@@ -1,9 +1,15 @@
+import styled from 'styled-components';
+
 import { Dot, FlexWrapper } from '~/components/atoms/atoms.ts';
 import { useSliderContext } from '~/context/slider';
 
 type Props = {
   color?: string;
 };
+
+const DotWrapper = styled(FlexWrapper)`
+  justify-content: center;
+`;
 
 const DotControls: React.FC<Props> = ({ color }) => {
   const { goToSlide, slidesCount, currentSlideIndex } = useSliderContext();
@@ -22,7 +28,7 @@ const DotControls: React.FC<Props> = ({ color }) => {
     }
     return dots;
   };
-  return <FlexWrapper gap="8">{renderDots()}</FlexWrapper>;
+  return <DotWrapper gap="8">{renderDots()}</DotWrapper>;
 };
 
 export { DotControls };

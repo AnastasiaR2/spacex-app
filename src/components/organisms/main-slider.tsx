@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
 
 import { FlexWrapper, Title } from '~/components/atoms/atoms.ts';
@@ -8,22 +8,11 @@ import {
   TourCard,
 } from '~/components/molecules/molecules.ts';
 import { SliderContext } from '~/context/slider.ts';
+import { ROCKETS_QUERY } from '~/libs/constants/constants.ts';
 import { useSlider } from '~/libs/hooks/hooks.ts';
-
-const ROCKETS_QUERY = gql`
-  query RocketsQuery {
-    rockets {
-      id
-      description
-      name
-    }
-  }
-`;
 
 const StyledMainSlider = styled.div`
   min-width: 1281px;
-  overflow: hidden;
-  position: relative;
 `;
 
 const MainSliderTitle = styled(Title)`
@@ -40,7 +29,7 @@ type Rocket = {
 const MainSlider: React.FC = () => {
   const { loading, data } = useQuery(ROCKETS_QUERY);
 
-  const rockets = data?.rockets ?? [];
+  const rockets = data?.rockets;
 
   const renderTourCards = () => {
     const divs = [];
@@ -66,6 +55,7 @@ const MainSlider: React.FC = () => {
             gap: '24px',
             transform: `translateX(-${currentSlideIndex * 100}%)`,
             flex: '0 0 100%',
+            transition: 'transform 0.3s ease-in-out',
           }}
           key={divKey}
         >
@@ -80,7 +70,7 @@ const MainSlider: React.FC = () => {
   // const slidesArr = renderTourCards();
 
   // const slidesCount = slidesArr.length;
-  const slidesCount = 2;
+  const slidesCount = 3;
 
   const { changeSlide, goToSlide, currentSlideIndex } = useSlider({
     slidesCount,
@@ -97,12 +87,9 @@ const MainSlider: React.FC = () => {
         </FlexWrapper>
         <div
           style={{
-            width: '100%',
             display: 'flex',
             overflow: 'hidden',
-            height: '100%',
-            position: 'relative',
-            transition: 'transform 0.5s ease-in-out',
+            margin: '40px 0px',
           }}
         >
           {loading ? <></> : rockets && renderTourCards()}
