@@ -33,7 +33,9 @@ const MainSlider: React.FC = () => {
 
   const rockets = data?.rockets ?? [];
 
-  const slidesCount = Math.ceil(rockets.length / ITEMS_PER_SLIDE);
+  const toursToDisplay = [...rockets, ...rockets, ...rockets.slice(0, 1)];
+
+  const slidesCount = Math.ceil(toursToDisplay.length / ITEMS_PER_SLIDE);
 
   const { changeSlide, goToSlide, currentSlideIndex } = useSlider({
     slidesCount,
@@ -52,7 +54,7 @@ const MainSlider: React.FC = () => {
             <ArrowControls />
           </FlexWrapper>
           <SlidesWrapper>
-            {renderSlides(rockets, currentSlideIndex)}
+            {renderSlides(toursToDisplay, currentSlideIndex)}
           </SlidesWrapper>
           <DotControls />
         </SliderContext.Provider>

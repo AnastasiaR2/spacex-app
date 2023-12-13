@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Button, FlexWrapper, Text } from '~/components/atoms/atoms.ts';
 import { TourCard } from '~/components/molecules/molecules.ts';
 import { useRecoilValue, useResetRecoilState } from '~/libs/hooks/hooks.ts';
-import { favoritesListState } from '~/recoil/atoms';
+import { favoritesListState } from '~/recoil/atoms.ts';
+import { filteredFavoritesList } from '~/recoil/selectors.ts';
 
 const StyledFavoritesList = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 `;
 
 const FavoriteListWrapper = styled(FlexWrapper)`
@@ -20,10 +20,11 @@ const ClearAllButton = styled(Button)`
   background-color: transparent;
   text-transform: none;
   text-align: right;
+  align-self: flex-end;
 `;
 
 const FavoritesList: React.FC = () => {
-  const favoritesList = useRecoilValue(favoritesListState);
+  const favoritesList = useRecoilValue(filteredFavoritesList);
   const handleFavoritesListReset = useResetRecoilState(favoritesListState);
 
   console.log(favoritesList);
