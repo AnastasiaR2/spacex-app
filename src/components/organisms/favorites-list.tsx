@@ -1,16 +1,43 @@
+import styled from 'styled-components';
+
+import { Button, FlexWrapper, Text } from '~/components/atoms/atoms.ts';
 import { TourCard } from '~/components/molecules/molecules.ts';
-import { useRecoilValue } from '~/libs/hooks/hooks.ts';
+import { useRecoilValue, useResetRecoilState } from '~/libs/hooks/hooks.ts';
 import { favoritesListState } from '~/recoil/atoms';
+
+const StyledFavoritesList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+const FavoriteListWrapper = styled(FlexWrapper)`
+  flex-wrap: wrap;
+  margin-top: 40px;
+`;
+
+const ClearAllButton = styled(Button)`
+  background-color: transparent;
+  text-transform: none;
+  text-align: right;
+`;
 
 const FavoritesList: React.FC = () => {
   const favoritesList = useRecoilValue(favoritesListState);
+  const handleFavoritesListReset = useResetRecoilState(favoritesListState);
+
   console.log(favoritesList);
   return (
-    <>
-      {favoritesList.map((item) => (
-        <TourCard key={item.id} index={item.index} rocket={item} />
-      ))}
-    </>
+    <StyledFavoritesList>
+      <ClearAllButton as={Text} onClick={handleFavoritesListReset}>
+        Clear All
+      </ClearAllButton>
+      <FavoriteListWrapper gap="24">
+        {favoritesList.map((item) => (
+          <TourCard key={item.id} index={item.index} rocket={item} />
+        ))}
+      </FavoriteListWrapper>
+    </StyledFavoritesList>
   );
 };
 
