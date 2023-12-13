@@ -13,7 +13,7 @@ const useSliderContext = () => {
   const context = useContext(SliderContext);
   if (!context) {
     throw new Error(
-      'useSliderContext must be used withing a <SliderContext.Provider>',
+      'useSliderContext must be used within a <SliderContext.Provider>',
     );
   }
   return context;

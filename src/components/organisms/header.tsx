@@ -8,8 +8,8 @@ import {
   Link,
 } from '~/components/atoms/atoms.ts';
 import { Logo, Navbar } from '~/components/molecules/molecules.ts';
+import { useIsFavoritesContext } from '~/context/is-favorites.ts';
 import { AppRoute } from '~/libs/enums/enums.ts';
-import { useLocation } from '~/libs/hooks/hooks.ts';
 
 type FavoritesButtonProps = {
   $isFavorites?: boolean;
@@ -36,9 +36,7 @@ const FavoritesButton = styled(IconButton)<FavoritesButtonProps>`
 `;
 
 const Header = () => {
-  const location = useLocation();
-
-  const isFavorites = location.pathname === AppRoute.FAVORITES;
+  const { isFavorites } = useIsFavoritesContext();
 
   return (
     <StyledHeader>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import TrashBin from '~/assets/images/icons/trash-bin.svg?react';
 import {
   Button,
   FlexWrapper,
@@ -9,6 +10,7 @@ import {
   Text,
   Title,
 } from '~/components/atoms/atoms.ts';
+import { useIsFavoritesContext } from '~/context/is-favorites.ts';
 import { TOUR_IMAGES } from '~/libs/constants/constants.ts';
 
 type Props = {
@@ -48,6 +50,8 @@ const TourCardText = styled(Text)`
 `;
 
 const TourCard: React.FC<Props> = ({ name, description, index }) => {
+  const { isFavorites } = useIsFavoritesContext();
+
   const imageIndex = index % TOUR_IMAGES.length;
 
   return (
@@ -58,9 +62,7 @@ const TourCard: React.FC<Props> = ({ name, description, index }) => {
         <TourCardText>{description}</TourCardText>
         <FlexWrapper gap="16">
           <TourCardButton>Buy</TourCardButton>
-          <IconButton>
-            <HeartIcon />
-          </IconButton>
+          <IconButton>{isFavorites ? <TrashBin /> : <HeartIcon />}</IconButton>
         </FlexWrapper>
       </TourCardBody>
     </StyledTourCard>
