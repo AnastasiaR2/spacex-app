@@ -9,7 +9,7 @@ import {
   Text,
   Title,
 } from '~/components/atoms/atoms.ts';
-import { IMAGES_URLS } from '~/libs/constants/constants.ts';
+import { TOUR_IMAGES } from '~/libs/constants/constants.ts';
 
 type Props = {
   name: string;
@@ -33,15 +33,15 @@ const TourCardButton = styled(Button)`
 `;
 
 const TourCardBody = styled.div`
-  padding: 32px 32px 24px;
+  margin: 32px 32px 24px;
 `;
 
 const TourCard: React.FC<Props> = ({ name, description, index }) => {
-  const imageIndex = index % IMAGES_URLS.length;
+  const imageIndex = index % TOUR_IMAGES.length;
 
   return (
     <StyledTourCard>
-      <Image src={IMAGES_URLS[imageIndex]} alt={name} />
+      <Image src={TOUR_IMAGES[imageIndex]} alt={name} />
       <TourCardBody>
         <TourCardTitle>{name}</TourCardTitle>
         <Text>{description}</Text>
