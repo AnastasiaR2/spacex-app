@@ -42,7 +42,7 @@ const MainSlider: React.FC = () => {
   });
 
   return (
-    <StyledMainSlider>
+    <StyledMainSlider id="toursSection">
       {loading ? (
         <></>
       ) : (
