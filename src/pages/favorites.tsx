@@ -1,7 +1,15 @@
-import { FavoritesBanner } from '~/components/organisms/organisms.ts';
+import {
+  FavoritesBanner,
+  FavoritesList,
+} from '~/components/organisms/organisms.ts';
 
 const Favorites = () => {
-  return <FavoritesBanner></FavoritesBanner>;
+  return (
+    <>
+      <FavoritesBanner />
+      <FavoritesList />
+    </>
+  );
 };
 
 export { Favorites };

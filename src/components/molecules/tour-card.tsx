@@ -12,10 +12,12 @@ import {
 } from '~/components/atoms/atoms.ts';
 import { useIsFavoritesContext } from '~/context/is-favorites.ts';
 import { TOUR_IMAGES } from '~/libs/constants/constants.ts';
+import { useRecoilState } from '~/libs/hooks/hooks.ts';
+import { type Rocket } from '~/libs/types/types.ts';
+import { favoritesListState } from '~/recoil/atoms';
 
 type Props = {
-  name: string;
-  description: string;
+  rocket: Rocket;
   index: number;
 };
 
@@ -49,8 +51,15 @@ const TourCardText = styled(Text)`
   -webkit-box-orient: vertical;
 `;
 
-const TourCard: React.FC<Props> = ({ name, description, index }) => {
+const TourCard: React.FC<Props> = ({ rocket, index }) => {
   const { isFavorites } = useIsFavoritesContext();
+  const { name, description, id } = rocket;
+
+  const [favoritesList, setFavoritesList] = useRecoilState(favoritesListState);
+
+  const handleAddToFavorites = () => {
+    setFavoritesList([...favoritesList, { id, name, description }]);
+  };
 
   const imageIndex = index % TOUR_IMAGES.length;
 
@@ -62,7 +71,13 @@ const TourCard: React.FC<Props> = ({ name, description, index }) => {
         <TourCardText>{description}</TourCardText>
         <FlexWrapper gap="16">
           <TourCardButton>Buy</TourCardButton>
-          <IconButton>{isFavorites ? <TrashBin /> : <HeartIcon />}</IconButton>
+          <IconButton>
+            {isFavorites ? (
+              <TrashBin />
+            ) : (
+              <HeartIcon onClick={handleAddToFavorites} />
+            )}
+          </IconButton>
         </FlexWrapper>
       </TourCardBody>
     </StyledTourCard>

@@ -1,6 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
 
 import { RouterProvider } from '~/components/components.ts';
 import { AppRoute } from '~/libs/enums/enums.ts';
@@ -15,23 +15,25 @@ const client = new ApolloClient({
 
 createRoot(document.querySelector('#root') as HTMLElement).render(
   <ApolloProvider client={client}>
-    <RouterProvider
-      routes={[
-        {
-          path: AppRoute.ROOT,
-          element: <App />,
-          children: [
-            {
-              path: AppRoute.ROOT,
-              element: <Home />,
-            },
-            {
-              path: AppRoute.FAVORITES,
-              element: <Favorites />,
-            },
-          ],
-        },
-      ]}
-    />
+    <RecoilRoot>
+      <RouterProvider
+        routes={[
+          {
+            path: AppRoute.ROOT,
+            element: <App />,
+            children: [
+              {
+                path: AppRoute.ROOT,
+                element: <Home />,
+              },
+              {
+                path: AppRoute.FAVORITES,
+                element: <Favorites />,
+              },
+            ],
+          },
+        ]}
+      />
+    </RecoilRoot>
   </ApolloProvider>,
 );

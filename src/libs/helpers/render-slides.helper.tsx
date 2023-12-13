@@ -12,12 +12,7 @@ const renderSlides = (
     const divContent = arr
       .slice(i, i + 3)
       .map((item: Rocket, index: number) => (
-        <TourCard
-          key={`card-${i + index}`}
-          index={i + index}
-          name={item.name}
-          description={item.description}
-        />
+        <TourCard key={`card-${i + index}`} index={i + index} rocket={item} />
       ));
 
     sliderItems.push(
