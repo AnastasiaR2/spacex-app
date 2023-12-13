@@ -6,5 +6,6 @@ export { HeartIcon } from './heart-icon.tsx';
 export { IconButton } from './icon-button.tsx';
 export { Image } from './image.tsx';
 export { Link } from './link.tsx';
+export { Slide } from './slide.tsx';
 export { Text } from './text.tsx';
 export { Title } from './title.tsx';

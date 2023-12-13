@@ -15,10 +15,10 @@ const ArrowControls: React.FC = () => {
 
   return (
     <FlexWrapper gap="16">
-      <StyledArrowControls onClick={() => changeSlide?.(-1)}>
+      <StyledArrowControls onClick={() => changeSlide(-1)}>
         <ArrowLeft />
       </StyledArrowControls>
-      <StyledArrowControls onClick={() => changeSlide?.(1)}>
+      <StyledArrowControls onClick={() => changeSlide(1)}>
         <ArrowRight />
       </StyledArrowControls>
     </FlexWrapper>

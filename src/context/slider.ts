@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 type SliderContextValue = {
-  changeSlide?: (direction: number) => void;
+  changeSlide: (direction: number) => void;
   goToSlide: (index: number) => void;
   slidesCount: number;
   currentSlideIndex: number;

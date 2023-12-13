@@ -13,7 +13,7 @@ const DotControlsWrapper = styled.div`
 const BackgroundSlider: React.FC = () => {
   const slidesCount = BACKGROUND_IMAGES.length;
 
-  const { currentSlideIndex, goToSlide } = useSlider({
+  const { currentSlideIndex, goToSlide, changeSlide } = useSlider({
     slidesCount,
     autoPlay: false,
   });
@@ -28,7 +28,7 @@ const BackgroundSlider: React.FC = () => {
 
   return (
     <SliderContext.Provider
-      value={{ goToSlide, currentSlideIndex, slidesCount }}
+      value={{ goToSlide, changeSlide, currentSlideIndex, slidesCount }}
     >
       {renderedSlides}
       <DotControlsWrapper>
