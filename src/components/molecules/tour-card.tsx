@@ -32,8 +32,19 @@ const TourCardButton = styled(Button)`
   width: 278px;
 `;
 
-const TourCardBody = styled.div`
-  margin: 32px 32px 24px;
+const TourCardBody = styled(FlexWrapper)`
+  padding: 32px 32px 24px;
+  flex-direction: column;
+`;
+
+const TourCardText = styled(Text)`
+  display: -webkit-box;
+  max-height: 106px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 const TourCard: React.FC<Props> = ({ name, description, index }) => {
@@ -42,9 +53,9 @@ const TourCard: React.FC<Props> = ({ name, description, index }) => {
   return (
     <StyledTourCard>
       <Image src={TOUR_IMAGES[imageIndex]} alt={name} />
-      <TourCardBody>
+      <TourCardBody gap="16">
         <TourCardTitle>{name}</TourCardTitle>
-        <Text>{description}</Text>
+        <TourCardText>{description}</TourCardText>
         <FlexWrapper gap="16">
           <TourCardButton>Buy</TourCardButton>
           <IconButton>
