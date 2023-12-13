@@ -12,7 +12,6 @@ const HomeTitle = styled(Title)`
   font-weight: 800;
   font-size: 48px;
   width: fit-content;
-  margin-top: 159px;
 
   & span {
     font-size: 310px;

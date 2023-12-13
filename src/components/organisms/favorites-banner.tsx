@@ -6,7 +6,6 @@ import { BACKGROUND_IMAGES } from '~/libs/constants/constants.ts';
 const FavoritesTitle = styled(Title)`
   font-weight: 800;
   font-size: 48px;
-  margin-top: 140px;
 `;
 
 const FavoritesBanner = () => {
